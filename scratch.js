@@ -12,46 +12,17 @@
           {
             opcode: "magnitude",
             blockType: Scratch.BlockType.REPORTER,
-            text: "get magnitude of x [x] and y [y]",
-            arguments: {
-              x: {
-                type: Scratch.ArgumentType.Number,
-                defaultValue: "0"
-              },
-              y: {
-                type: Scratch.ArgumentType.Number,
-                defaultValue: "0"
-              }
-            }
+            text: "get magnitude of x [x] and y [y]"
           },
           {
             opcode: "normalize_getX",
             blockType: Scratch.BlockType.REPORTER,
-            text: "normalize x [x], y [y] and get x",
-            arguments: {
-              x: {
-                type: Scratch.ArgumentType.Number,
-                defaultValue: "0"
-              },
-              y: {
-                type: Scratch.ArgumentType.Number,
-                defaultValue: "0"
-              }
-            }
+            text: "normalize x [x], y [y] and get x"
           },
           {
             opcode: "normalize_getY",
             blockType: Scratch.BlockType.REPORTER,
-            text: "normalize x [x], y [y] and get y",
-            arguments: {
-              x: {
-                type: Scratch.ArgumentType.Number,
-                defaultValue: "0"
-              },
-              y: {
-                type: Scratch.ArgumentType.Number,
-                defaultValue: "0"
-              }
+            text: "normalize x [x], y [y] and get y"
             }
           }
         ]
@@ -63,11 +34,11 @@
     }
     
     normalize_getX({x, y}) {
-      return (x / magnitude({x, y}));
+      return (x / Math.sqrt((x * x) + (y * y)));
     }
     
     normalize_getY({x, y}) {
-      return (y / magnitude({x, y}));
+      return (y / Math.sqrt((x * x) + (y * y)));
     }
   }
   
